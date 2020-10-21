@@ -16,21 +16,35 @@ console.log(foods1);
 
 const numberArray = [12, 324, 213, 4, 2, 3, 45, 4234];
 
-let evenNumber = numberArray.filter(function isEven(num) {
-  var even = num % 2 == 0;
+let evenNumber = numberArray.filter(function isEven(numberArray) {
+  var even = numberArray % 2 == 0;
   return even;
 });
 
 console.log(evenNumber);
+//const numberArray = [12, 324, 213, 4, 2, 3, 45, 4234];
+
+function isPrime(numberArray) {
+  for (let i = 2; i <= numberArray.length; i++) {
+    if (numberArray[i] % i !== 0) {
+      return numberArray[i];
+    }
+  }
+}
+console.log(isPrime(numberArray));
 
 //Progression-4
 
-let nonPrimeNumber = numberArray.filter(function nonPrime(num, index) {
-  var noPrime = num % index === 0;
-  return noPrime;
+var numArray = [12, 324, 213, 4, 2, 3, 45, 4234];
+
+numArray = numArray.filter((number) => {
+  for (var i = 2; i <= Math.sqrt(number); i++) {
+    if (number % i === 0) return false;
+  }
+  return true;
 });
 
-console.log(nonPrimeNumber);
+console.log(numArray);
 
 //Progression-5
 let evenNumber1 = numberArray.filter((num) => {
